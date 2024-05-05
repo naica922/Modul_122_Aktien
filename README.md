@@ -14,7 +14,8 @@ Our project also takes security into consideration, which is why we have login d
 
 ## MILESTONES
 A: We discussed the Projekt with our teacher and filled out the document with the "An forderungsdefinition". In a second step we created an UML  activity diagram. <br>
-ADD Activity Diagram <br>
+![image](https://github.com/naica922/Modul_122_Aktien/assets/150661049/d998ba72-3e48-4ea9-b3ba-16963a2ba9c3)
+<br>
 B: Implementation of the solution <br>
 C: We've created this GitHub Repository with three branches. One for Zachary, one for Naima and the main branch. However, we had a little trouble working with the branches because we haven't done this before. However, we tried our best.
 
