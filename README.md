@@ -10,7 +10,9 @@ It's an automation for stocks that tracks the values of the stocks and updates t
 Users can enter their e-mail and receive the data from the stocks accordingly.<br>
 The automation is useful for those who are interested in the market and stocks, as they are directly notified when something happens. 
 All data is retrieved from an API and updated at certain frequency.<br>
-Our project also takes security into consideration, which is why we have login details that can be found in the code.<br>
+Our project also takes security into consideration, which is why we have login details that can be found in the code.<br> <br>
+
+If you would like to use my project you can run the code and change the Email credentials to yours. Then you should receive the messages every several minutes.
 
 ## INSTALLATION GUIDE FOR ADMINS:
 In order to use my project, I have created instructions for the corresponding setup and the development environment as described in the main branch.<br>
