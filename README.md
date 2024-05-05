@@ -20,22 +20,25 @@ B: Implementation of the solution <br>
 C: We've created this GitHub Repository with three branches. One for Zachary, one for Naima and the main branch. However, we had a little trouble working with the branches because we haven't done this before. However, we tried our best.
 
 ## PROJECT START AND END:
-We started the project on ... and had to work on it at school a total of 4 times. <br>
-That's about 16 hours in altogether and the rest at home. The project was presented on 6.5.24 with a demo and the documentation.
+We started the project approximately on the 26.03.24 and had to work on it at school a total of 4 times. <br>
+That's about 16 hours in altogether and the rest at home. <br>
+The project was presented on 6.5.24 with a demo and the documentation.
 
 ## PROJECT RESULTS:
 Our project can send emails and checks the status of the API with the latest data.
 
 ## TEAM:
-Naima Cavegn and Zachary Jenkins.We basically wrote our code on our own, but we were allowed to support each other with questions and project development.
+Naima Cavegn and Zachary Jenkins
+We basically wrote our code on our own, but we were allowed to support each other with questions and project development.
 
 ## DEADLINE:
 The project deadline was May 6, when we also had to hand in our project.
 
 ## INSTALLATION:
 To use our project yourself, you can use the following instructions with the data and set up the project locally.<br>
+We both created our own documentation for the setup which you can find in this markdown or in the branches.
 
-## Code Zachary
+## Code and documentation Zachary
 Here you can see the code that I have done:
 ```
 import requests
