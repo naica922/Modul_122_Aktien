@@ -24,7 +24,10 @@ That's about 16 hours in altogether and the rest at home. <br>
 The project was presented on 6.5.24 with a demo and the documentation.
 
 ## PROJECT RESULTS:
-Our project can send emails and checks the status of the API with the latest data.
+Our project checks the stocks from the API and updates them every several minutes.
+It sends an Email to the hardcoded mail which you can use to test our codes.
+If an error happens, you should get a response which helps you to fix it. <br>
+Basically we are both content, but we could have used help from the teacher on some topics. Despite this, we implemented the project.
 
 ## TEAM:
 Naima Cavegn and Zachary Jenkins
