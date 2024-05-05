@@ -1,4 +1,4 @@
-# DOCUMENTATION
+# DOCUMENTATION FOR USER AND ADMIN
 ## STOCK AUTOMATIZATION
 #### by Naima Cavegn<br>
 
@@ -34,7 +34,7 @@ cd “/your/location/stock_price_tracker.py” -> This command navigates to the 
 python3 stock_price_tracker.py -> This command executes the code <br>
 !If you get the error that the file could not be found then check for spelling mistakes and make sure that you go to the innermost folder otherwise the file will not be found!<br>
 
-## Code 
+## CODE 
 ```
 import requests # http
 import smtplib # for sending an email
@@ -112,3 +112,17 @@ while True:
     schedule.run_pending()
     time.sleep(60)  # Check every minute
 ```
+### Explanation
+At the top of my code are the imports. On the one side I have an import for the http requests which I need to be able to get data.<br>
+I also have imports for sending emails which I have implemented with smtplib. These are the most important ones, the others still relate to the functionality with time etc. <br>
+Next, I have code that sets up a logging system that writes status codes and error messages to a file called “stock_price_updates.log”. <br>
+I have hardcoded my API key and login credentials. These can be changed and the API key customized to your own if you want. Since you also have to enter the password from the email, Zachary and I thought about creating a Gmail that we can both use for this project. <br>
+The 'tickers' list contains the symbols of the stocks whose prices are to be tracked, for example “AAPL” for Apple and “MSFT” for Microsoft. <br>
+The `send_stock_update_email` function is defined to send emails with a specific message text and subject. This function uses the `smtplib` library to establish a connection to the email server and send the email. Errors when sending the e-mail are logged. <br>
+The `fetch_stock_data_and_notify` function is defined to get the stock data for each symbol in the list of tickers. It uses the `requests` library to retrieve data from an API. The data is then analyzed and an email with the quote details is prepared. Errors in retrieving the data are also logged. <br>
+ The `schedule` library is used to call the `fetch_stock_data_and_notify` function every 5 minutes. This ensures that the stock data is regularly updated and emails are sent.<br>
+In the end, an infinite loop is started that monitors the schedule and calls the appropriate functions. This enables continuous updating of the share data and the sending of e-mails. <br>
+The loop checks the schedule for updates every 60 seconds.
+
+
+
