@@ -28,3 +28,86 @@ The project deadline was May 6, when we also had to hand in our project.
 To use our project yourself, you can use the following instructions with the data and set up the project locally.<br>
 
 
+## Code Zachary
+Here you can see the code that we have done:
+```
+import requests
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import schedule
+import time
+import logging
+
+# Set up logging
+logging.basicConfig(filename='stock_price_updates.log', level=logging.INFO,
+                    format='%(asctime)s:%(levelname)s:%(message)s')
+
+# Polygon API credentials
+api_key = 'Pgq1zXTF7aq8RrEVuGwrAUm3dN4z7vkN'
+
+# Email credentials
+sender_email = "tbzmodul@gmail.com"
+sender_password = "TBZmodul1234!!"
+recipient_email = "tbzmodul@gmail.com"
+
+# List of stock tickers to track
+tickers = ["AAPL", "MSFT"]  # Example tickers
+
+
+def send_email(body, subject="Stock Price Information for Multiple Tickers"):
+    """Send an email with the given body and subject."""
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = recipient_email
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
+
+    try:
+        # Create SMTP session for sending the mail
+        smtp_server = "smtp.gmail.com"
+        smtp_port = 587
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, recipient_email, msg.as_string())
+        logging.info("Email sent successfully!")
+    except Exception as e:
+        logging.error("Failed to send email. Error: %s", str(e))
+    finally:
+        server.quit()
+
+
+def fetch_data_and_send_email():
+    body = ""
+    for ticker in tickers:
+        try:
+            url = f'https://api.polygon.io/v2/aggs/ticker/{ticker}/prev?adjusted=true&apiKey={api_key}'
+            response = requests.get(url)
+            response.raise_for_status()  # Raises an HTTPError for bad responses
+
+            stock_info = response.json()
+            if 'results' in stock_info and stock_info['results']:
+                prices = stock_info['results'][0]
+                body += f"{ticker}: Open: {prices['o']}, High: {prices['h']}, Low: {prices['l']}, Close: {prices['c']}\n"
+            else:
+                body += f"{ticker}: No data found.\n"
+
+        except requests.exceptions.HTTPError as e:
+            logging.error("HTTP Error for %s: %s", ticker, str(e))
+            body += f"{ticker}: HTTP Error retrieving data.\n"
+        except requests.exceptions.RequestException as e:
+            logging.error("Request Exception for %s: %s", ticker, str(e))
+            body += f"{ticker}: Request Exception retrieving data.\n"
+
+    if body:
+        send_email(body)
+
+
+# Schedule the email to be sent every 5 minutes
+schedule.every(5).minutes.do(fetch_data_and_send_email)
+
+# Infinite loop to run the scheduler
+while True:
+    schedule.run_pending()
+    time.sleep(60)  # Check every minute
