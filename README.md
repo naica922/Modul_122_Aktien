@@ -1,6 +1,6 @@
 # DOCUMENTATION
 ## STOCK AUTOMATIZATION
-### made by Naima Cavegn, Zachary Jenkins <br><br>
+#### made by Naima Cavegn, Zachary Jenkins <br><br>
 
 ## PROJECT DESCRIPTION:
 This repository is for an automation project of module 122 Bash. <br>
