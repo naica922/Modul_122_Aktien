@@ -12,14 +12,15 @@ The automation is useful for those who are interested in the market and stocks, 
 All data is retrieved from an API and updated at certain frequency, then stored in a database.<br>
 Our project also takes security into consideration, which is why we have login details that can be found in the installation section.<br>
 
-## Meilensteine
-A: We discussed the Projekt with our teacher and filled out the document with the "Anforderungsdefinition". In a second step we created an UML  activity diagram. <br>
-ADD Activity Diagram
-B: Implementation of the solution
+## MILESTONES
+A: We discussed the Projekt with our teacher and filled out the document with the "An forderungsdefinition". In a second step we created an UML  activity diagram. <br>
+ADD Activity Diagram <br>
+B: Implementation of the solution <br>
 C: We've created this GitHub Repository with three branches. One for Zachary, one for Naima and the main branch. However, we had a little trouble working with the branches because we haven't done this before. However, we tried our best.
 
 ## PROJECT START AND END:
-We started the project on ... and had to work on it at school a total of 4 times. That's about 16 hours in altogether and the rest at home. The project was presented on 6.5.24 with a demo and the documentation.
+We started the project on ... and had to work on it at school a total of 4 times. <br>
+That's about 16 hours in altogether and the rest at home. The project was presented on 6.5.24 with a demo and the documentation.
 
 ## PROJECT RESULTS:
 Our project can send emails and checks the status of the API with the latest data.
