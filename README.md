@@ -126,5 +126,9 @@ The `fetch_stock_data_and_notify` function is defined to get the stock data for 
 In the end, an infinite loop is started that monitors the schedule and calls the appropriate functions. This enables continuous updating of the share data and the sending of e-mails. <br>
 The loop checks the schedule for updates every 60 seconds.
 
+## ACTIVITY DIAGRAM
+![image](https://github.com/naica922/Modul_122_Aktien/assets/150661049/5fbc26f5-cb6f-4709-8513-743f21f6e453)
+
+
 
 
