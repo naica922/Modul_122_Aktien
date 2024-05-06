@@ -82,4 +82,4 @@ Add a line to the crontab file to schedule your script:
 ```
 This cron job runs the script every 10 minutes.
 
-Step shouldn't be needed since it is already automated in the code that it should be automated every 10 minutes.
+Step 5 shouldn't be needed since it is already automated in the code that it should be automated every 10 minutes.
