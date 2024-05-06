@@ -39,3 +39,47 @@ The project deadline was May 6, when we also had to hand in our project.
 ## INSTALLATION:
 To use our project yourself, you can use the following instructions with the data and set up the project locally. We did the project with a raspberry py<br>
 We both created our own documentation for the setup which you can find in the branches zachary and naima.
+
+# Starting the Project
+To start the project you should be able to use a Rasberry Pi and connect to it through the cmd using ssh. Currently it doesn't work locally.
+
+1. Prepare the Raspberry Pi
+Install the OS: Ensure that your Raspberry Pi has Raspberry Pi OS  installed and is up to date. You can update the system with the following commands in the terminal:
+```
+sudo apt update
+sudo apt upgrade
+```
+
+2. Install Python
+Python Installation: Raspberry Pi OS comes with Python pre-installed, usually both Python 2 and Python 3. To check if Python is installed and determine its version, run:
+```
+sudo apt install python3
+```
+3. Transfer Your Script to the Raspberry Pi
+Script Transfer: You can transfer your Python script to the Raspberry Pi using several methods:
+SCP (Secure Copy Protocol): From your PC in the same network, you can use SCP to transfer files:
+```
+scp path/to/send_stock_email.py pi@raspberrypi.local:/home/pi/
+```
+FTP/SFTP: Use an FTP client like FileZilla to transfer files to /home/pi/.
+Directly Editing on Pi: Use a text editor like nano on the Raspberry Pi to create and edit your script directly:
+```
+nano send_stock_email.py
+```
+4. Execute the Script
+Execute the Script: Run your script on the Raspberry Pi:
+```
+python3 send_stock_email.py
+```
+5. Automate the Script (Optional)
+Cron Job: If you want your script to run at regular intervals, set up a cron job:
+```
+crontab -e
+```
+Add a line to the crontab file to schedule your script:
+```
+*/10 * * * * python3 /home/pi/send_stock_email.py
+```
+This cron job runs the script every 10 minutes.
+
+Step shouldn't be needed since it is already automated in the code that it should be automated every 10 minutes.
